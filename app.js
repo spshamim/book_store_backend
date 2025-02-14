@@ -9,6 +9,7 @@ connectDB();
 app.use(
     cors({
         origin: "https://bookstore-livid-one.vercel.app",
+        methods: "GET, POST, PATCH, DELETE, OPTIONS",
     })
 );
 app.use(express.json());
