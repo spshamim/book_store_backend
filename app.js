@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const connectDB = require("./config/db.js");
-const cookieParser = require("cookie-parser");
 require("dotenv").config();
 
 const bookRoutes = require("./routes/booksRoute");
@@ -10,11 +9,9 @@ connectDB();
 app.use(
     cors({
         origin: "https://bookstore-livid-one.vercel.app",
-        credentials: true,
     })
 );
 app.use(express.json());
-app.use(cookieParser());
 app.use("/api/books", bookRoutes);
 const PORT = 3000;
 app.listen(PORT, () => {
