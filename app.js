@@ -9,7 +9,7 @@ const app = express();
 connectDB();
 app.use(
     cors({
-        origin: "http://localhost:7000",
+        origin: "https://bookstore-livid-one.vercel.app",
         credentials: true,
     })
 );
